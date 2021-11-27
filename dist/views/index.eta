@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.css" />
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-analytics.js";
+    import { getAuth, signInWithPopup, GoogleAuthProvider, EmailAuthProvider } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js";
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBBcoV-ExJAX5SueVLxTEVBP3RJq--ScqM",
+      authDomain: "sakura-reading-app.firebaseapp.com",
+      projectId: "sakura-reading-app",
+      storageBucket: "sakura-reading-app.appspot.com",
+      messagingSenderId: "344379283163",
+      appId: "1:344379283163:web:fda4750dc00b653954defe",
+      measurementId: "G-T8BYVZSCEV"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth();
+
+    const provider = new GoogleAuthProvider();
+    provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        // ...
+        console.log(user.uid)
+      }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+      });
+  </script>
+</head>
+
+<body>
+  <h1>Login plz</h1>
+</body>
+
+</html>
