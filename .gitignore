@@ -1,0 +1,7 @@
+# Exclude nodejs dependency directory
+node_modules
+
+# Exclude IDE config
+.gitpod.yml
+.vscode
+.theia

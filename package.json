@@ -1,0 +1,29 @@
+{
+  "name": "sakura-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dion-ricky/sakura-web.git"
+  },
+  "author": "dion-ricky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dion-ricky/sakura-web/issues"
+  },
+  "homepage": "https://github.com/dion-ricky/sakura-web#readme",
+  "dependencies": {
+    "eta": "^1.12.3",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.3",
+    "tailwindcss": "^2.2.19",
+    "webpack": "^5.64.4"
+  }
+}
